@@ -69,10 +69,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/web/views/player.html");
 });
 
-app.get('/vis', (req, res) => {
-    res.sendFile(__dirname + "/web/views/visualiser.html");
-});
-
 app.use('/static/web', express.static(__dirname + "/web/static/"));
 
 // plot-accessible backend

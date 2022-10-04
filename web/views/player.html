@@ -3,7 +3,6 @@
    <head>
       <meta charset="UTF-8">
       <title>Sound</title>
-      <link type="text/plain" rel="author" href="/humans.txt" />
       <script src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.spatial.min.js" integrity="sha512-WrCiPa/Alh9jKtZDVF/OHv+TdGFWXtMEfOtBAEyNu5IllLNKUFkIyoKRQY2vBuloYnhnN4p56/Ob4KJUSPLnbA==" crossorigin="anonymous"></script>
@@ -28,10 +27,10 @@
                <h2 class="header-title">&#128075; Hey <span id="in-game-name">there</span>!</h2>
                <h3><span id="status">Unlinked</span></h3>
                 <canvas id="visual" width="2000" height="2000" style="display:none;"></canvas>
-               <h3><input type="text" id="linking" placeholder="Linking Code" style="text-align: center;" onchange="doLink();"></h3>
+               <h3><input type="text" id="linking" placeholder="Username" style="text-align: center;" onchange="doLink();"></h3>
                <p id="status-message">
                   Keep this tab open in the background since it'll be used to play audio related to your in-game
-                  actions.
+                  actions. <br>Put your username in the box above to link your browser to your in-game player.
                </p>
                <div style="text-align: center; margin-top: 7%;">
                  <input id="music-volume-slider" type="range" min="0" max="100" value="25" style="width: 100%">
@@ -43,8 +42,10 @@
          </div>
       </div>
        </div>
+       <!--
     <div id="overlay" onclick="document.getElementById('overlay').style.display = 'none';">
       <div id="overlayText"><p><b>Click to enable audio</b></p></div>
     </div>
+-->
    </body>
 </html>
