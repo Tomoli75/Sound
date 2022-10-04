@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+   <head>
+      <meta charset="UTF-8">
+      <title>Sound</title>
+      <link type="text/plain" rel="author" href="/humans.txt" />
+      <script src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.spatial.min.js" integrity="sha512-WrCiPa/Alh9jKtZDVF/OHv+TdGFWXtMEfOtBAEyNu5IllLNKUFkIyoKRQY2vBuloYnhnN4p56/Ob4KJUSPLnbA==" crossorigin="anonymous"></script>
+      <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+     <script src="static/web/bundle.iife.js"></script>
+      <script src="static/web/growl-notification.min.js"></script>
+      <script src="static/web/player.js"></script>
+      <link href="static/web/player.css" rel="stylesheet">
+      <link href="static/web/growl-light.min.css" rel="stylesheet">
+      <link href="static/web/growl.min.css" rel="stylesheet">
+      <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+   </head>
+   <body>
+      <div data-page="content-card" style="height: 100%;">
+      <nav class="header-nav container flex-container">
+      </nav>
+      <div class="alert-area" id="alert-area"></div>
+      <div class="header-description container" style="height: 100%; max-width: 100%">
+         <div style="text-align: center;">
+            <div style="" data-type="card" id="main-card">
+               <h2 class="header-title">&#128075; Hey <span id="in-game-name">there</span>!</h2>
+               <h3><span id="status">Unlinked</span></h3>
+                <canvas id="visual" width="2000" height="2000" style="display:none;"></canvas>
+               <h3><input type="text" id="linking" placeholder="Linking Code" style="text-align: center;" onchange="doLink();"></h3>
+               <p id="status-message">
+                  Keep this tab open in the background since it'll be used to play audio related to your in-game
+                  actions.
+               </p>
+               <div style="text-align: center; margin-top: 7%;">
+                 <input id="music-volume-slider" type="range" min="0" max="100" value="25" style="width: 100%">
+                 <p id="music-volume-disp"></p>
+                 <input id="sfx-volume-slider" type="range" min="0" max="100" value="75" style="width: 100%">
+                 <p id="sfx-volume-disp"></p>
+               </div>
+            </div>
+         </div>
+      </div>
+       </div>
+    <div id="overlay" onclick="document.getElementById('overlay').style.display = 'none';">
+      <div id="overlayText"><p><b>Click to enable audio</b></p></div>
+    </div>
+   </body>
+</html>
